@@ -12,7 +12,12 @@
 
  Другими словами: функция должна возвращать в неизменном виде то, что поступает ей на вход
  */
-function returnFirstArgument() {}
+ function returnFirstArgument(a) {
+  return a;
+}
+a = ('Hello');
+  const result = returnFirstArgument(a);
+console.log(result);
 
 /*
  Задание 2:
@@ -28,7 +33,24 @@ function returnFirstArgument() {}
  Пример:
    sumWithDefaults(10) вернет 110
  */
-function sumWithDefaults() {}
+
+//  2.1
+function sumWithDefaults(a, b) {
+  return a + b;
+}
+sumWithDefaults(a = 10, b = 20);
+const sum = sumWithDefaults (a = 10, b = 20);
+console.log(sum);
+
+// 2.2
+function sumWithDefaults(c) {
+  function foo (d) {
+    return c + d;
+  }
+  return foo;
+}
+const foo = sumWithDefaults(c = 100);
+console.log (foo (d = 10));
 
 /*
  Задание 3:
@@ -38,7 +60,13 @@ function sumWithDefaults() {}
  Пример:
    returnFnResult(() => 'привет') вернет 'привет'
  */
-function returnFnResult() {}
+function returnFnResult(fn2) {
+  return fn2;
+}
+const fn2Result = returnFnResult(function fn2() {
+  return 'результат вызова функции';
+});
+console.log(fn2Result);
 
 /*
  Задание 4:
@@ -53,8 +81,17 @@ function returnFnResult() {}
    console.log(f()); // выведет 12
    console.log(f()); // выведет 13
  */
-function returnCounter() {}
+function returnCounter() {
+  let y = 0;
 
+  function f () {
+    y = y + 1;
+    return y;
+  }
+  return f;
+}
+ const counter = returnCounter();
+ console.log (counter());
 /*
  Задание 5 *:
 
@@ -64,7 +101,15 @@ function returnCounter() {}
  Пример:
    returnArgumentsArray(1, 2, 3) вернет [1, 2, 3]
  */
-function returnArgumentsArray() {}
+  function returnArgumentsArray(...numbers) {
+    let result = [0];
+    for (let i = 0; i < numbers.length; i++) {
+        result[i] = numbers[i];
+    }
+    return result;
+  }
+console.log(returnArgumentsArray(1, 2, 3));
+
 
 export {
   returnFirstArgument,
