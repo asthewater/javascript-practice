@@ -17,7 +17,6 @@
 }
 a = ('Hello');
   const result = returnFirstArgument(a);
-console.log(result);
 
 /*
  Задание 2:
@@ -40,7 +39,6 @@ function sumWithDefaults(a, b) {
 }
 sumWithDefaults(a = 10, b = 20);
 const sum = sumWithDefaults (a = 10, b = 20);
-console.log(sum);
 
 // 2.2
 function sumWithDefaults(c) {
@@ -50,7 +48,6 @@ function sumWithDefaults(c) {
   return foo;
 }
 const foo = sumWithDefaults(c = 100);
-console.log (foo (d = 10));
 
 /*
  Задание 3:
@@ -66,7 +63,6 @@ function returnFnResult(fn2) {
 const fn2Result = returnFnResult(function fn2() {
   return 'результат вызова функции';
 });
-console.log(fn2Result);
 
 /*
  Задание 4:
@@ -91,7 +87,6 @@ function returnCounter() {
   return f;
 }
  const counter = returnCounter();
- console.log (counter());
 /*
  Задание 5 *:
 
@@ -108,7 +103,6 @@ function returnCounter() {
     }
     return result;
   }
-console.log(returnArgumentsArray(1, 2, 3));
 
 
 export {
