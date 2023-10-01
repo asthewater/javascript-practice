@@ -9,7 +9,21 @@
  Пример:
    forEach([1, 2, 3], (el) => console.log(el)); // выведет каждый элемент массива
  */
-function forEach() {}
+
+  //  встроенный метод forEach()
+
+const a = [1, 2, 'hello', 4, 5];
+a.forEach((elems) => {
+  console.log(elems);
+});
+
+
+// аналог метода forEach()
+
+const a = [1, 2, 'hello', 4, 5];
+for (const el of a) {
+  console.log(el);
+};
 
 /*
  Задание 2:
@@ -21,8 +35,22 @@ function forEach() {}
    const newArray = map([1, 2, 3], (el) => el ** 2);
    console.log(newArray); // выведет [1, 4, 9]
  */
-function map() {}
 
+ // встроенный метод map()
+
+ const array = [2, 4, 6,];
+ let newArray = array.map((array2) => array2 ** 2)
+   
+ console.log(newArray);
+
+// аналог метода map()
+
+const b = [2, 4, 6,];
+let c = [];
+for (let i = 0; i < b.length; i++) {
+  c[i] = b[i] ** 2;
+};
+ console.log(c);
 /*
  Задание 3:
 
@@ -33,7 +61,23 @@ function map() {}
    const sum = reduce([1, 2, 3], (all, current) => all + current);
    console.log(sum); // выведет 6
  */
-function reduce() {}
+
+// встроенный метод reduce()
+
+const num = [1, 3, 4];
+let sum = num.reduce((sum, mun) {
+  return sum + num;
+});
+console.log(sum);
+
+// аналог метода reduce()
+
+const num = [4, 5, 1];
+let sum = 0;
+for (let i = 0; i < num.length; i++) {
+  sum += num[i];
+}
+console.log(sum);
 
 /*
  Задание 4:
@@ -45,5 +89,15 @@ function reduce() {}
    console.log(keys) // выведет ['NAME', 'LASTNAME']
  */
 function upperProps() {}
+
+const person = {
+  name: 'Sara',
+  lastName: 'Smith'
+};
+ 
+for (const key of Object.keys(person)) {
+  console.log ([key.toUpperCase()]);
+};
+ 
 
 export { forEach, map, reduce, upperProps };
